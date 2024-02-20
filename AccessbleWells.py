@@ -2,7 +2,7 @@
 """
 Created on Tue Feb 20 10:23:08 2024
 
-@author: Noori
+@author: Nooria
 """
 import os
 from pcraster import *

@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 import os
 from osgeo import gdal, gdalconst
-os.environ['PROJ_LIB'] = r'C:\Users\Noori\anaconda3\Library\share\proj'
-os.environ['GDAL_DATA'] = r'C:\Users\Noori\anaconda3\Library\share'
+os.environ['PROJ_LIB'] = r'C:\Users\Nkuhan\anaconda3\Library\share\proj'
+os.environ['GDAL_DATA'] = r'C:\Users\Nkuhan\anaconda3\Library\share'
 
 # convert all files at once 
 # \ next line

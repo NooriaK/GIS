@@ -31,14 +31,14 @@ def RasterLayerProperties(RasterLayer):
     RasterLayer = None
     
     
-DTMLayer = gdal.Open(r'C:\Temp\PCRasterTutorials-main\MapAlgebra\data\dtm.map')
+DTMLayer = gdal.Open('data\dtm.map')
 RasterLayerProperties(DTMLayer)
 
-BuildingLayer = gdal.Open(r'C:\Temp\PCRasterTutorials-main\MapAlgebra\data\buildg.map')
+BuildingLayer = gdal.Open('data\buildg.map')
 RasterLayerProperties(BuildingLayer)
 
-RoadLayer = gdal.Open(r'C:\Temp\PCRasterTutorials-main\MapAlgebra\data\roads.map')
+RoadLayer = gdal.Open('data\roads.map')
 RasterLayerProperties(RoadLayer)
 
-GWLevelLayer = gdal.Open(r'C:\Temp\PCRasterTutorials-main\MapAlgebra\data\gwlevel.map')
+GWLevelLayer = gdal.Open('data\gwlevel.map')
 RasterLayerProperties(GWLevelLayer)

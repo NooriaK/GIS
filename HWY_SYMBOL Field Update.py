@@ -1,4 +1,5 @@
-This site was built using [GitHub Pages](https://github.com/NooriaK/GIS/tree/main/Maps/).
+# (https://github.com/NooriaK/GIS/tree/main/Maps/).
+
 
 fc = 'Highways'
 fields = arcpy.ListFields(fc)

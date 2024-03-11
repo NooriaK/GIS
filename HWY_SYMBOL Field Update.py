@@ -1,3 +1,5 @@
+#Maps
+
 fc = 'Highways'
 fields = arcpy.ListFields(fc)
 fieldName = 'HWY_SYMBOL'

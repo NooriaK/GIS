@@ -1,5 +1,5 @@
-inputFC = r"C:\Users\Noori\Downloads\PythEveryone\HandleErrors\SanDiego.gdb\SD_Stream"
-outputFC = "StreamBuffers_A"
+inputFC = r"C:\SanDiego.gdb\SD_Stream"
+outputFC = "StreamBuffers"
 bufferField = "BufferDistance"
 bufferUnit = "Feet"
 dissolveType = "ALL"

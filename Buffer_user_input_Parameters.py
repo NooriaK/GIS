@@ -1,12 +1,9 @@
 #-------------------------------------------------------------------------------
-# Name:        module1
-# Purpose:
-#
-# Author:      Noori
-#
+# Name:       module1
+# Purpose:    make a script tool
+# Author:      Nooria
 # Created:     17-03-2024
 # Copyright:   (c) Noori 2024
-# Licence:     <your licence>
 #-------------------------------------------------------------------------------
 
 import arcpy

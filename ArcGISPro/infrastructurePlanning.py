@@ -1,4 +1,4 @@
-# (https://github.com/NooriaK/GIS/tree/main/Maps/).
+# update field with (HWY_SYMBOL).
 
 
 fc = 'Highways'

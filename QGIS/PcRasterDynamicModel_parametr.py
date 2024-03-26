@@ -67,9 +67,7 @@ class RunoffModel(DynamicModel):
         self.DischargeTSS = TimeoutputTimeseries(DischargeAtMeasurementLocation,
                                                  self, self.Measurements,noHeader=False)
         
-       
-     
-          
+                   
     # Make a global variable, by adding self (PCRaster dynamic map stacks)
     # Write the code that needs to be executed every time step
     def dynamic(self):
@@ -142,9 +140,8 @@ class RunoffModel(DynamicModel):
         self.DischargeTSS.sample(Discharge)
         # aguila discharge.tss
      
-   
-    
-#Define the clone map(mask) All raster maps need to have the same properties as the clone map (i.e. same number of rows and collumns, coordinate system, extent, pixels size). PCRaster checks this when the code is run.
+ 
+#Define the clone map(mask) All raster maps need to have the same properties as the clone map (i.e. same number of rows and columns, coordinate system, extent, pixels size). PCRaster checks this when the code is run.
 myModel = RunoffModel("./Data/mask.map")
 
 # The model runs 10 time steps starting at time step 1.

@@ -37,8 +37,8 @@ class RunoffModel(DynamicModel):
         
           
          # lookup tables
-        self.InterceptionThreshold = lookupscalar("./Data/d.tbl",landuse)       # Lookup table(Interception threshold data for different land-use types.
-        self.report(self.InterceptionThreshold,"./Data/d")                      # Write the result to disk using self.report
+        self.InterceptionThreshold = lookupscalar("./Data/intThrshhold.tbl",landuse)       # Lookup table(Interception threshold data for different land-use types.
+        self.report(self.InterceptionThreshold,"./Data/intThrshhold")                      # Write the result to disk using self.report
         
         self.SuMax = lookupscalar("./Data/smax.tbl", soil)                      # maximum storage unsaturated zone mm
         self.report(self.SuMax, "./Data/SuMax")
@@ -149,4 +149,4 @@ dynModelFw = DynamicFramework(myModel, lastTimeStep=10, firstTimestep=1)
 dynModelFw.run()
 
 # Visualise the land-use map and map with the interception threshold
-#aguila("./Data/landuse.map","./Data/d.map")
+#aguila("./Data/landuse.map","./Data/intThrshhold.map")

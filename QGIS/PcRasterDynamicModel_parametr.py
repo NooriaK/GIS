@@ -21,8 +21,7 @@ class RunoffModel(DynamicModel):
         self.metstat = self.readmap("./Data/metstat")
         DEM = self.readmap("./Data/dem")
         self.mask = self.readmap("./Data/mask")
-        self.flowdirection = self.readmap("./Data/ldd")
-        
+              
         # Add the constants as global variables
         self.Ku = scalar(1.5)                   # Recession contstant of flow from unsaturated to saturated zone
         self.surface = scalar(0.01)             # surface of a gridcell (km2)
@@ -36,7 +35,7 @@ class RunoffModel(DynamicModel):
         self.Ss = scalar(50.0)                  # storage saturated zone 
         self.Ss0 = scalar(100.0)                # Distance between the surface and the bottom of the river
         
-            
+          
          # lookup tables
         self.InterceptionThreshold = lookupscalar("./Data/d.tbl",landuse)       # Lookup table(Interception threshold data for different land-use types.
         self.report(self.InterceptionThreshold,"./Data/d")                      # Write the result to disk using self.report
@@ -68,20 +67,9 @@ class RunoffModel(DynamicModel):
         self.DischargeTSS = TimeoutputTimeseries(DischargeAtMeasurementLocation,
                                                  self, self.Measurements,noHeader=False)
         
-        
-        
- 
-        # Calculation of the flow direction map
-        self.flowdirection = lddcreate(DEM,1e31,1e31,1e31,1e31)
-        self.flowdirection = lddmask(self.flowdirection,self.mask)
-        self.report(self.flowdirection,"./Data/ldd")
-        
+       
      
-        
-                    
-                 
-                    
-                 
+          
     # Make a global variable, by adding self (PCRaster dynamic map stacks)
     # Write the code that needs to be executed every time step
     def dynamic(self):
@@ -92,8 +80,7 @@ class RunoffModel(DynamicModel):
         # calculate Net Precipitation
         NetPrecipitation = Precipitation - Interception
         self.report(NetPrecipitation,"./Data/pn")
-        
-        
+                
         # Create map with actual evaporation
         ETStations = timeinputscalar("./Data/et.tss", self.metstat)
         self.report(ETStations,"./Data/etstat")
@@ -154,9 +141,9 @@ class RunoffModel(DynamicModel):
         # Report discharge time series at meansurement locations
         self.DischargeTSS.sample(Discharge)
         # aguila discharge.tss
-        
-        
-        
+     
+   
+    
 #Define the clone map(mask) All raster maps need to have the same properties as the clone map (i.e. same number of rows and collumns, coordinate system, extent, pixels size). PCRaster checks this when the code is run.
 myModel = RunoffModel("./Data/mask.map")
 
@@ -165,4 +152,4 @@ dynModelFw = DynamicFramework(myModel, lastTimeStep=10, firstTimestep=1)
 dynModelFw.run()
 
 # Visualise the land-use map and map with the interception threshold
-#aguila("./Data/landuse.map","./Data/d.map","./Data/ldd.map")
+#aguila("./Data/landuse.map","./Data/d.map")
